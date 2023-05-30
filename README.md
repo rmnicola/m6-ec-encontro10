@@ -93,7 +93,7 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ```
 Na pasta raiz (~):
 ```
-ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True map:=maps/<nome-do-mapa>.yaml
+ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=maps/<nome-do-mapa>.yaml
 
 ```
 Feito é isso, é só setar o ponto inicial e movimentar o robô normalmente pela interface gráfica ou API em Python.
