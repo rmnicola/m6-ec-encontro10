@@ -2,7 +2,26 @@
 
 # Setar o destino do robô manualmente no RViz
 
-# Definir sequências de pontos pela API em Python
+**Instale o Nav2**
+
+```
+sudo apt install ros-humble-navigation2
+sudo apt install ros-humble-nav2-bringup
+sudo apt install ros-humble-turtlebot3-gazebo
+
+```
+
+**Rodar exemplo do Nav2 com RViz**
+```
+source /opt/ros/humble/setup.bash
+export TURTLEBOT3_MODEL=waffle
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/opt/ros/humble/share/turtlebot3_gazebo/models
+```
+```
+ros2 launch nav2_bringup tb3_simulation_launch.py headless:=False
+
+```
+No RViz, clique em "2D Point Estimate" e sete a posição inicial aproximada do robô no Gazebo. Então, clique em Navigation2 Goal e selecione o ponto desejado no mapa.
 
 # Mapear o TurtleBot World com SLAM
 
@@ -66,5 +85,29 @@ robot_model_type: "nav2_amcl::DifferentialMotionModel"
 ```
 ### Abrir o mapa em si
 
+Em terminais paralelos, abra o Gazebo com o Turtlebot World e carregue o mapa gerado no RViz:
+
+```
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+
+```
+Na pasta raiz (~):
+```
+ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True map:=maps/<nome-do-mapa>.yaml
+
+```
+Feito é isso, é só setar o ponto inicial e movimentar o robô normalmente pela interface gráfica ou API em Python.
+
 ## Construindo e mapeando um mundo novo
 
+1. Abra o Gazebo em mundo vazio com o seguinte comando:
+
+```
+ros2 launch turtlebot3_gazebo empty_world.launch.py
+```
+2. Na aba superior, clique em Edit > Building Editor
+3. Construa o cenário desejado
+4. Clique em File > Save
+5. Clique em File > Exit Building Editor
+
+O cenário criado irá aparecer no 
