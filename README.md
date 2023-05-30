@@ -110,4 +110,4 @@ ros2 launch turtlebot3_gazebo empty_world.launch.py
 4. Clique em File > Save
 5. Clique em File > Exit Building Editor
 
-O cenário criado irá aparecer no 
+O cenário criado irá aparecer no Gazebo. A partir daí, basta repetir os passos de mapeamento descritos anteriormente.
