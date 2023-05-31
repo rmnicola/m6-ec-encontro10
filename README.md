@@ -77,12 +77,14 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 ```
 Depois, vá para o seguinte caminho:
 ```
-cd ~/opt/ros/humble/share/turtlebot3_navigation2/param
+cd /opt/ros/humble/share/turtlebot3_navigation2/param
 ```
 Altere o arquivo "waffle.yaml" pelo sudo gedit ou vim. Substitua a linha robot_model_type por:
 ```
 robot_model_type: "nav2_amcl::DifferentialMotionModel"
 ```
+Não se esqueça de dar source no ~/.bashrc antes de continuar!
+
 ### Abrir o mapa em si
 
 Em terminais paralelos, abra o Gazebo com o Turtlebot World e carregue o mapa gerado no RViz:
