@@ -1,6 +1,54 @@
-# m6-ec-encontro9
+[Voltar para o repositório principal :house:](https://github.com/rmnicola/m6-ec-encontros.git)
 
-# Setar o destino do robô manualmente no RViz
+# Integração de sistemas<!-- omit in toc -->
+
+## Objetivos do encontro
+
+## Conteúdo <!-- omit in toc -->
+
+- [Mapear o TurtleBot World com SLAM](#mapear-o-turtlebot-world-com-slam)
+  - [Mapeando](#mapeando)
+  - [Salvando o mapa](#salvando-o-mapa)
+  - [Abrir um mapa para navegação no RViz](#abrir-um-mapa-para-navegação-no-rviz)
+    - [Resolvendo bug de importação do mapa](#resolvendo-bug-de-importação-do-mapa)
+    - [Abrir o mapa em si](#abrir-o-mapa-em-si)
+  - [Construindo e mapeando um mundo novo](#construindo-e-mapeando-um-mundo-novo)
+
+## Configurando o WSL como Bridge
+
+***Em construção***
+
+Para configurar o WSL para usar rede em modo ponte, primeiro é necessário habilitar 
+
+![](assets/hyperv1.jpg)
+![](assets/hyperv2.jpg)
+![](assets/hyperv4.jpg)
+![](assets/hyperv3.jpg)
+
+
+
+### Arrumando problema que pode aparecer com a rede
+![](assets/hyperv5.jpg)
+![](assets/hyperv6.jpg)
+![](assets/hyperv7.jpg)
+![](assets/hyperv8.jpg)
+
+Após fazer as configurações acima, entre no WSL e rode:
+
+```bash
+sudo ip addr flush eth0
+```
+
+e 
+
+```bash
+sudo dhclient eth0
+```
+
+Ao rodar `ip a` você agora deve ver um ip dentro da subnet da sua rede local
+
+
+## Setar o destino do robô manualmente no RViz
 
 **Instale o Nav2**
 
